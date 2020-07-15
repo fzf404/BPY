@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
-    name='BPY',
+    name='biliapi',
     version='0.0.1',
     description='BPY: b站API的python库',
     long_description=long_description,
@@ -14,5 +14,6 @@ setup(
     url='https://github.com/fzf404/BPY',
     license="MIT",
     packages=find_packages(),
-    install_requires=['qrcode >= 6.1', 'pillow >= 6.0.0', 'requests >= 2.22.0']
+    install_requires=['qrcode >= 6.1',
+                      'pillow >= 6.0.0', 'requests >= 2.22.0'],
 )
