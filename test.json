@@ -1,0 +1,61 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "isLogin": true,
+        "email_verified": 1,
+        "face": "http:\/\/i2.hdslb.com\/bfs\/face\/8e5be0e509e8ace97a6c500e992605de89f442a5.jpg",
+        "level_info": {
+            "current_level": 5,
+            "current_min": 10800,
+            "current_exp": 18462,
+            "next_exp": 28800
+        },
+        "mid": 66628023,
+        "mobile_verified": 1,
+        "money": 370.6,
+        "moral": 70,
+        "official": {
+            "role": 0,
+            "title": "",
+            "desc": "",
+            "type": -1
+        },
+        "officialVerify": {
+            "type": -1,
+            "desc": ""
+        },
+        "pendant": {
+            "pid": 0,
+            "name": "",
+            "image": "",
+            "expire": 0,
+            "image_enhance": ""
+        },
+        "scores": 0,
+        "uname": "\u50d5\u306f\u5c0ff",
+        "vipDueDate": 1626364800000,
+        "vipStatus": 1,
+        "vipType": 2,
+        "vip_pay_type": 0,
+        "vip_theme_type": 0,
+        "vip_label": {
+            "path": "",
+            "text": "\u5e74\u5ea6\u5927\u4f1a\u5458",
+            "label_theme": "annual_vip"
+        },
+        "vip_avatar_subscript": 1,
+        "vip_nickname_color": "#FB7299",
+        "wallet": {
+            "mid": 66628023,
+            "bcoin_balance": 0,
+            "coupon_balance": 0,
+            "coupon_due_time": 0
+        },
+        "has_shop": false,
+        "shop_url": "",
+        "allowance_count": 0,
+        "answer_status": 0
+    }
+}
