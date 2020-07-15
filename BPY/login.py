@@ -3,21 +3,29 @@ import qrcode
 import time
 
 
-class Login(object):
-    def __init__(self):
+class login(object):
+    def __init__(self, log_meth, name=None, passwd=None, phone=None):
         self.bession = requests.session()
         self.bession.header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
+        self.name = name
+        self.passwd = passwd
+        self.phone = phone
+        self.cookies = None
+        self.cookiesjar = None
 
-    def login(self, log_meth):
         if log_meth == 'qr':
             self.qr_log()
         elif log_meth == 'pwd':
+            if self.name == None or self.passwd == None:
+                raise LookupError("请传入name及passwd哦！")
             raise EOFError("Error~正在研发中！")
-            self.pwd()
+            self.pwd_log()
         elif log_meth == 'sms':
+            if self.phone == None:
+                raise LookupError("请传入phone哦！")
             raise EOFError("Error~正在研发中！")
-            self.sms()
+            self.sms_log()
         else:
             raise ValueError("传入的登录method暂不支持哦！")
 
@@ -31,25 +39,34 @@ class Login(object):
         qrcode.make(data['url']).show()
         # 展示二维码
         while True:
-            # 持续post至登录成功
+            # 无限循环至登录成功
             if time.time()-time_start > 170:
                 # 判断二维码是否失效
                 raise TimeoutError("超时啦~二维码无效了!")
             if self.comfirm(data):
-                break
+                # 判断是否登录成功
+                return 1
+
+    def pwd_log(self):
+        pass
+
+    def sms_log(self):
+        pass
 
     def comfirm(self, data):
         confirm_url = 'http://passport.bilibili.com/qrcode/getLoginInfo'
         time.sleep(1)
+        # 每次请求间隔一秒
         verify = self.bession.post(confirm_url, data=data)
         if verify.json()['status'] == True:
             print('登陆成功啦,可以开始你的操作啦~')
+            self.cookiesjar = self.bession.cookies
+            self.cookies = requests.utils.dict_from_cookiejar(
+                self.bession.cookies)
             return 1
         else:
             return 0
 
 
 if __name__ == "__main__":
-    test = Login()
-    test.log_choice('qr')
-    print(test.bession.cookies)
+    pass

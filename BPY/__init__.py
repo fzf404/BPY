@@ -1,5 +1,4 @@
-from .login import Login
-from .usrinfo import UserInfo
+from .login import login
+from .usrinfo import usrinfo
 
-class classname(object):
-    pass
+
