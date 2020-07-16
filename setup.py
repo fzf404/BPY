@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='biliapi',
-    version='0.0.2',
+    version='0.0.3',
     description='BPY: b站API的python库',
     long_description=long_description,
     long_description_content_type="text/markdown",
