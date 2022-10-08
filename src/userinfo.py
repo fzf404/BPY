@@ -1,12 +1,13 @@
-import requests
 import json
+
+import requests
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'}
 myurl = 'http://api.bilibili.com/nav'
 
 
-class usrinfo(object):
+class userinfo(object):
 
     def __init__(self, uid=None, login=None):
         self.login = login
